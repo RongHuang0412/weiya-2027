@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 尾牙溫泉方案</title>
+<style>
+:root{--fg:#111;--muted:#666;--bg:#f6f6f4;--panel:#fff;--line:#e2e2de;--grid:#ececea;--b1:#111;--b2:#8a8a86;--b3:#cfcfca}
+@media (prefers-color-scheme: dark){:root{--fg:#f2f2f0;--muted:#a3a3a0;--bg:#141414;--panel:#1d1d1c;--line:#353533;--grid:#2a2a29;--b1:#f2f2f0;--b2:#9a9a96;--b3:#55554f}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:Arial,"Microsoft JhengHei","微軟正黑體","PingFang TC","Noto Sans TC",sans-serif;font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:72rem;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:20px}
+h1{font-size:26px;margin:0 0 8px;letter-spacing:.02em}
+.take{margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--muted);background:var(--panel)}
+.chip b{color:var(--fg)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0}
+.card h2{font-size:18px;margin:0}
+.note{margin:4px 0 14px;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--muted);border-bottom:1px solid var(--fg);padding:6px 8px;white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.rank td:first-child{width:2.2em;text-align:center;color:var(--muted)}
+.rank td:nth-child(2){white-space:nowrap}
+tr.top td,tr.top td:first-child{font-weight:700;color:var(--fg)}
+.box{position:relative}
+svg{display:block}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.15);padding:4px 10px;font-size:13px;white-space:nowrap;opacity:0}
+.tip .h{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-bottom:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:12px;height:12px;border-radius:2px;display:inline-block}
+.plans{display:flex;flex-direction:column;gap:16px}
+.plan{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+.plan.top{border-color:var(--fg)}
+.plan-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--fg);color:var(--panel);font-weight:700}
+.plan:not(.top) .badge{background:var(--panel);color:var(--fg);border:1.5px solid var(--fg)}
+.plan-h h3{margin:0;font-size:19px}
+.plan-h .area{color:var(--muted);font-size:14px}
+.plan-r{margin:8px 0 14px}
+.plan-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:18px}
+dl{margin:0;display:grid;grid-template-columns:5.5em 1fr;gap:6px 10px;font-size:14px}
+dt{color:var(--muted)}
+dd{margin:0}
+.map-a{color:var(--fg);text-decoration:underline;text-underline-offset:2px;font-size:13px}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{display:grid;grid-template-columns:5.2em 1fr;gap:8px;padding:5px 0 5px 12px;position:relative;font-size:14px}
+.tl li::before{content:"";position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--panel);border:2px solid var(--muted)}
+.tl li.day2::before{border-color:var(--fg);background:var(--fg)}
+.tl .t{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tl-h{font-size:13px;color:var(--muted);margin:0 0 6px}
+ul.calls{margin:0;padding-left:1.2em;line-height:1.9}
+details{font-size:13px;color:var(--muted)}
+details a{color:var(--fg)}
+details ul{padding-left:1.2em;line-height:1.8}
+@media (max-width:640px){.card,.plan{padding:14px}h1{font-size:22px}.rank td:nth-child(2){white-space:normal;min-width:5.5em}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header>
+  <h1>2027 尾牙溫泉方案</h1>
+  <p class="take">暫定 <b>A 泰安觀止</b>（隔天採草莓）。它官網 1/29 <b>還沒開放訂房</b>，建議先打電話問開放日期、能否先保留團體房。備案首推 <b>C 日月潭</b>：三地車程最平均、房價最接近預算。</p>
+  <div class="meta">
+   <span class="chip">日期 <b>1/29</b>（五）–<b>1/30</b>（六）</span>
+   <span class="chip">人數 <b>15–17</b> 人</span>
+   <span class="chip">住宿 每人約 <b>2,000</b> 元（超過自付）</span>
+   <span class="chip">晚餐 每人 <b>2,000–3,000</b> 元</span>
+   <span class="chip">交通 大家各自開車</span>
+  </div>
+ </header>
+
+ <div class="grid">
+  <section class="card"><h2>推薦順序</h2><p class="note">粗體為主推；A 為暫定方案。</p>
+   <table class="rank"><thead><tr><th>#</th><th>方案</th><th>推薦理由</th></tr></thead><tbody id="rank"></tbody></table>
+  </section>
+  <section class="card"><h2>各方案優勢一眼看</h2><p class="note">圓點越多越好。「空房把握」依 11/6 查到的狀況；A 尚未開放訂房，暫給 3 分。</p><div class="box" id="dots"></div></section>
+ </div>
+
+ <section class="card"><h2>各地同事開車要多久</h2><p class="note">概略車程（小時），實際依出發地與路況。</p>
+  <div class="legend"><span><i class="sw" style="background:var(--b1)"></i>桃園</span><span><i class="sw" style="background:var(--b2)"></i>台中</span><span><i class="sw" style="background:var(--b3)"></i>台南</span></div>
+  <div class="box" id="drive"></div>
+ </section>
+
+ <section><h2 style="font-size:18px;margin:0 0 12px">各方案行程</h2><div class="plans" id="plans"></div></section>
+
+ <section class="card"><h2>打電話時每家都問這三件事</h2>
+  <ul class="calls">
+   <li>1/29 能不能一次訂 8–9 間房？有沒有一泊二食團體價？</li>
+   <li>晚餐能不能安排 15–17 人包廂或獨立區，每人 2,000–3,000 元的等級？</li>
+   <li>下午能不能提早入住或先寄放行李泡湯？</li>
+  </ul>
+  <p class="note" style="margin-top:10px">不住宿、要自己開車回家的同事，晚餐請不要喝酒，或安排不喝酒的同事開車。</p>
+ </section>
+
+ <details><summary>評分說明與資料來源</summary><ul>
+  <li>泰安觀止 1/29 尚未開放訂房，依官網查詢結果。其他房價與空房為 2026/11/6 在 Booking.com 查詢 1/29–1/30、2 位成人的結果，價格隨時會變動。</li>
+  <li>圓點評分與車程是依公開資訊整理的概略比較，不是官方數據。</li>
+  <li><a href="https://tournews.tw/taian-hotspring-hotel-guide/" target="_blank" rel="noopener">泰安溫泉住宿整理（觀止房價範圍）</a></li>
+  <li><a href="https://shopee.tw/blog/dahu-strawberry-farm/amp/" target="_blank" rel="noopener">大湖草莓園推薦</a></li>
+  <li><a href="https://supertaste.tvbs.com.tw/pack/333414" target="_blank" rel="noopener">統一渡假村谷關（一泊二食舊方案）</a></li>
+  <li><a href="https://bunnyann.tw/mushroom2024/" target="_blank" rel="noopener">新社阿亮香菇園</a></li>
+  <li><a href="https://travel.yam.com/article/115057" target="_blank" rel="noopener">日月潭紅茶廠揉茶體驗</a></li>
+ </ul></details>
+</div>
+<script>
+const P = [{"rank": 1, "code": "A", "area": "苗栗泰安", "hotel": "泰安觀止溫泉會館", "map_q": "泰安觀止溫泉會館", "reason": "溫泉質感最好，隔天採草莓最在地；1/29 官網還沒開放訂房，一開放就要搶", "price": "約 6,000–12,000／房（網路整理範圍）", "pp": "約 3,000–6,000", "avail": "官網 1/29 尚未開放訂房（不是客滿）；可先致電問開放日期或能否先保留團體房", "dinner": "館內餐廳（在地食材）；能否接 15–17 人晚餐需確認", "afternoon": "房間附私人溫泉池，到了就能泡", "day2": "大湖採草莓（選高架園區不用彎腰）＋大湖酒莊吃草莓冰、買伴手禮", "day2_drive": "約 20–30 分", "note": "房價超出住宿預算的部分需自付；問有無一泊二食團體價", "drive_ty": 1.5, "drive_tc": 1.0, "drive_tn": 2.5, "s_local": 5, "s_fair": 4, "s_budget": 2, "s_sure": 3, "plan": [["中午後", "各自開車出發"], ["15:00 起", "入住、泡湯、自由休息"], ["18:00", "尾牙晚餐：老闆開場、抽獎、年度小獎"], ["20:30", "大合照"], ["20:45", "散會，住的回房，不住的自行回家"], ["隔天 08:00", "早餐"], ["10:00", "退房，開車到大湖草莓園（約 20–30 分）"], ["10:30", "採草莓"], ["11:30", "大湖酒莊：草莓冰、伴手禮"], ["12:00", "解散，各自回家"]]}, {"rank": 2, "code": "C", "area": "南投日月潭", "hotel": "日月潭大飯店", "map_q": "日月潭大飯店", "reason": "三地同事開車時間最平均、房價最接近預算；揉茶、遊湖都是坐著就能玩", "price": "4,750／雙人房（Booking，剩 3 間）", "pp": "約 2,375", "avail": "Booking 1/29 尚有空房（剩 3 間是此價）", "dinner": "館內餐廳；包廂與每人 2,000–3,000 元菜單需確認", "afternoon": "湖畔散步、飯店休息（是否有溫泉需確認；雲品、溫德姆溫泉飯店 1/29 已滿）", "day2": "遊湖船（全程坐著看風景）＋魚池紅茶廠揉茶 DIY、品茶", "day2_drive": "約 15–20 分", "note": "揉茶 DIY 通常 5 人起、需預約；若一定要溫泉，可改問其他湖畔溫泉飯店", "drive_ty": 2.75, "drive_tc": 1.5, "drive_tn": 2.0, "s_local": 4, "s_fair": 5, "s_budget": 4, "s_sure": 3, "plan": [["中午後", "各自開車出發"], ["15:00 起", "入住、湖畔散步、自由休息"], ["18:00", "尾牙晚餐：老闆開場、抽獎、年度小獎"], ["20:30", "大合照"], ["20:45", "散會，住的回房，不住的自行回家"], ["隔天 08:00", "早餐"], ["09:30", "退房，搭遊湖船（坐著看湖景）"], ["10:45", "開車到魚池紅茶廠（約 15–20 分）"], ["11:00", "揉茶 DIY、品紅茶"], ["12:00", "解散，各自回家"]]}, {"rank": 3, "code": "B", "area": "台中谷關", "hotel": "統一渡假村谷關溫泉養生會館", "map_q": "統一渡假村 谷關溫泉養生會館", "reason": "有館內餐廳的溫泉度假村，隔天採香菇很在地；台南同事車程稍長", "price": "6,980／雙人房（Booking，剩 5 間）", "pp": "約 3,490", "avail": "Booking 1/29 尚有空房（剩 5 間是此價）", "dinner": "館內餐廳，過去有一泊二食方案；團體包廂需確認", "afternoon": "戶外五行湯、森泉光廊，到了就泡湯", "day2": "新社採香菇（例如阿亮香菇園，免門票，採多少秤多少）＋吃炸香菇", "day2_drive": "約 1 小時", "note": "問一泊二食團體價，住宿加晚餐合算每人 4,000–5,000 內較划算", "drive_ty": 2.5, "drive_tc": 1.5, "drive_tn": 2.75, "s_local": 4, "s_fair": 4, "s_budget": 3, "s_sure": 4, "plan": [["中午後", "各自開車出發"], ["15:00 起", "入住、泡湯、自由休息"], ["18:00", "尾牙晚餐：老闆開場、抽獎、年度小獎"], ["20:30", "大合照"], ["20:45", "散會，住的回房，不住的自行回家"], ["隔天 08:00", "早餐"], ["09:30", "退房，開車到新社（約 1 小時）"], ["10:30", "採香菇、吃炸香菇"], ["11:30", "買香菇、農產伴手禮"], ["12:00", "解散，各自回家"]]}, {"rank": 4, "code": "D", "area": "宜蘭礁溪", "hotel": "長榮鳳凰酒店（礁溪）", "map_q": "長榮鳳凰酒店 礁溪", "reason": "五星溫泉飯店、目前有折扣；但台南同事要開 4 小時以上", "price": "7,388／雙人房（Booking 折扣價，原價 16,418）", "pp": "約 3,694", "avail": "Booking 1/29 尚有空房", "dinner": "館內有自助餐廳；中餐包廂與尾牙菜單需確認", "afternoon": "溫泉、飯店設施，礁溪街上散步", "day2": "噶瑪蘭威士忌酒廠參觀、品酒", "day2_drive": "約 20–30 分", "note": "酒廠開放時間與品酒方式需確認；品酒要安排不喝酒的駕駛", "drive_ty": 1.5, "drive_tc": 3.0, "drive_tn": 4.5, "s_local": 3, "s_fair": 2, "s_budget": 3, "s_sure": 4, "plan": [["中午後", "各自開車出發"], ["15:00 起", "入住、泡湯、自由休息"], ["18:00", "尾牙晚餐：老闆開場、抽獎、年度小獎"], ["20:30", "大合照"], ["20:45", "散會，住的回房，不住的自行回家"], ["隔天 08:00", "早餐"], ["10:00", "退房，開車到噶瑪蘭酒廠（約 20–30 分）"], ["10:30", "酒廠參觀、品酒"], ["11:30", "買伴手禮"], ["12:00", "解散，各自回家"]]}, {"rank": 5, "code": "E", "area": "台北北投", "hotel": "大地酒店", "map_q": "北投 大地酒店", "reason": "高級溫泉酒店，北部同事最近；但價格最高、南部同事最遠", "price": "9,799／雙人房（Booking）", "pp": "約 4,900", "avail": "Booking 1/29 尚有空房", "dinner": "館內餐廳；團體包廂需確認", "afternoon": "溫泉、SPA、北投街區散步", "day2": "北投溫泉博物館、地熱谷（距離短，走幾步就到）", "day2_drive": "約 5–10 分", "note": "住宿明顯超出預算，自付金額較多", "drive_ty": 1.0, "drive_tc": 2.5, "drive_tn": 4.0, "s_local": 2, "s_fair": 2, "s_budget": 1, "s_sure": 4, "plan": [["中午後", "各自開車出發"], ["15:00 起", "入住、泡湯、自由休息"], ["18:00", "尾牙晚餐：老闆開場、抽獎、年度小獎"], ["20:30", "大合照"], ["20:45", "散會，住的回房，不住的自行回家"], ["隔天 08:00", "早餐"], ["10:00", "退房"], ["10:15", "北投溫泉博物館、地熱谷慢慢逛"], ["11:30", "附近吃午餐或買伴手禮"], ["12:00", "解散，各自回家"]]}].slice().sort((a, b) => a.rank - b.rank);
+const NS = 'http://www.w3.org/2000/svg';
+const S = (tag, a, parent) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.append(e); return e; };
+const H = (tag, cls, text, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; if (parent) parent.append(e); return e; };
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const tipFor = (box) => { const t = H('div', 'tip', null, box); return (ev, title, line) => { const b = box.getBoundingClientRect(); t.replaceChildren(); H('div', 'h', title, t); H('div', null, line, t); const mx = ev.clientX - b.left, my = ev.clientY - b.top; t.style.opacity = 1; t.style.left = Math.max(0, Math.min(mx + 12, box.clientWidth - t.offsetWidth - 4)) + 'px'; t.style.top = Math.max(0, my - 44) + 'px'; }; };
+const bind = (el, fn, box) => { el.addEventListener('pointerdown', fn); el.addEventListener('pointermove', fn); el.addEventListener('pointerleave', () => { const t = box.querySelector('.tip'); if (t) t.style.opacity = 0; }); };
+const label = (x) => `${x.code} ${x.area}`;
+const TOP = 2;
+
+const rk = document.getElementById('rank');
+P.forEach((x) => { const tr = H('tr', x.rank <= TOP ? 'top' : '', null, rk); H('td', null, String(x.rank), tr); H('td', null, label(x), tr); H('td', null, x.reason, tr); });
+
+const plans = document.getElementById('plans');
+P.forEach((x) => {
+  const c = H('article', 'plan' + (x.rank <= TOP ? ' top' : ''), null, plans);
+  const h = H('div', 'plan-h', null, c); H('span', 'badge', x.code, h); H('h3', null, x.hotel, h); H('span', 'area', x.area + '・推薦第 ' + x.rank, h);
+  H('p', 'plan-r', x.reason, c);
+  const body = H('div', 'plan-body', null, c);
+  const dl = H('dl', null, null, body);
+  [['房價', x.price], ['每人', x.pp + ' 元（兩人一間）'], ['空房', x.avail], ['晚餐', x.dinner], ['下午', x.afternoon], ['隔天活動', x.day2 + '（車程' + x.day2_drive + '）'], ['注意', x.note]].forEach(([k, v]) => { H('dt', null, k, dl); H('dd', null, v, dl); });
+  H('dt', null, '地圖', dl); const dd = H('dd', null, null, dl); const a = H('a', 'map-a', 'Google 地圖 ↗', dd); a.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(x.map_q); a.target = '_blank'; a.rel = 'noopener';
+  const right = H('div', null, null, body); H('p', 'tl-h', '行程（實心點為隔天）', right);
+  const ol = H('ol', 'tl', null, right);
+  x.plan.forEach(([t, d]) => { const li = H('li', t.startsWith('隔天') || /^1[0-2]:/.test(t) && x.plan.findIndex((p) => p[0].startsWith('隔天')) <= x.plan.findIndex((p) => p[0] === t) ? 'day2' : '', null, ol); H('span', 't', t, li); H('span', null, d, li); });
+});
+
+const DIMS = [['s_local', '在地體驗', '在地'], ['s_fair', '交通公平', '交通'], ['s_budget', '符合預算', '預算'], ['s_sure', '空房把握', '空房']];
+function drawDots() {
+  const box = document.getElementById('dots'); box.replaceChildren();
+  const W = Math.max(280, box.clientWidth || 480), rowH = 34, top = 30, Ht = top + rowH * P.length;
+  const svg = S('svg', {width: '100%', viewBox: `0 0 ${W} ${Ht}`, role: 'img', 'aria-label': '各方案優勢評分'}, box);
+  const fg = css('--fg'), mu = css('--muted'), ln = css('--line'), gr = css('--grid');
+  const probe = S('text', {'font-size': 13, 'font-weight': 700}, svg); let lw = 0; P.forEach((x) => { probe.textContent = label(x); lw = Math.max(lw, probe.getComputedTextLength()); }); probe.remove();
+  lw = Math.ceil(lw) + 12;
+  const colW = (W - lw) / DIMS.length, dotR = Math.max(2.5, Math.min(5.5, colW / 15)), gap = dotR * 2.6, show = tipFor(box);
+  DIMS.forEach(([, l, s], i) => { const t = S('text', {x: lw + colW * i + colW / 2, y: 14, 'text-anchor': 'middle', 'font-size': 13, fill: mu}, svg); t.textContent = colW < 70 ? s : l; });
+  P.forEach((x, j) => {
+    const y = top + rowH * j + rowH / 2;
+    S('line', {x1: 0, x2: W, y1: top + rowH * j, y2: top + rowH * j, stroke: gr}, svg);
+    const t = S('text', {x: 0, y, dy: '0.35em', 'font-size': 13, fill: x.rank <= TOP ? fg : mu, 'font-weight': x.rank <= TOP ? 700 : 400}, svg); t.textContent = label(x);
+    DIMS.forEach(([k, l], i) => {
+      const cx0 = lw + colW * i + colW / 2 - gap * 2;
+      for (let n = 0; n < 5; n++) S('circle', n < x[k] ? {cx: cx0 + gap * n, cy: y, r: dotR, fill: fg} : {cx: cx0 + gap * n, cy: y, r: dotR, fill: 'none', stroke: ln, 'stroke-width': 1.2}, svg);
+      const hit = S('rect', {x: lw + colW * i, y: y - rowH / 2, width: colW, height: rowH, fill: 'transparent'}, svg);
+      bind(hit, (ev) => show(ev, label(x), `${l} ${x[k]} / 5`), box);
+    });
+  });
+}
+
+const OFF = [['drive_ty', '桃園', '--b1'], ['drive_tc', '台中', '--b2'], ['drive_tn', '台南', '--b3']];
+const fmtH = (h) => { const m = Math.round(h * 60); const hh = Math.floor(m / 60), mm = m % 60; return (hh ? hh + ' 小時' : '') + (mm ? (hh ? ' ' : '') + mm + ' 分' : ''); };
+function drawDrive() {
+  const box = document.getElementById('drive'); box.replaceChildren();
+  const W = Math.max(280, box.clientWidth || 600), barH = 9, gapB = 3, groupH = OFF.length * (barH + gapB) + 14, top = 6, bottom = 24;
+  const Ht = top + groupH * P.length + bottom;
+  const svg = S('svg', {width: '100%', viewBox: `0 0 ${W} ${Ht}`, role: 'img', 'aria-label': '各方案開車時間'}, box);
+  const fg = css('--fg'), mu = css('--muted'), gr = css('--grid');
+  const probe = S('text', {'font-size': 13, 'font-weight': 700}, svg); let lw = 0; P.forEach((x) => { probe.textContent = label(x); lw = Math.max(lw, probe.getComputedTextLength()); }); probe.remove();
+  lw = Math.ceil(lw) + 12;
+  const max = 5, endPad = 34, x = (v) => lw + (W - lw - endPad) * v / max, show = tipFor(box);
+  for (let v = 0; v <= max; v++) { S('line', {x1: x(v), x2: x(v), y1: top, y2: Ht - bottom + 4, stroke: gr}, svg); const t = S('text', {x: x(v), y: Ht - 6, 'text-anchor': 'middle', 'font-size': 12, fill: mu}, svg); t.textContent = v + 'h'; }
+  P.forEach((p, j) => {
+    const y0 = top + groupH * j + 4;
+    const t = S('text', {x: 0, y: y0 + (OFF.length * (barH + gapB)) / 2, dy: '0.35em', 'font-size': 13, fill: p.rank <= TOP ? fg : mu, 'font-weight': p.rank <= TOP ? 700 : 400}, svg); t.textContent = label(p);
+    OFF.forEach(([k, name, col], i) => {
+      const y = y0 + i * (barH + gapB);
+      const r = S('rect', {x: x(0), y, width: Math.max(1, x(p[k]) - x(0)), height: barH, rx: 2, fill: css(col)}, svg);
+      const v = S('text', {x: x(p[k]) + 4, y: y + barH / 2, dy: '0.35em', 'font-size': 11, fill: mu}, svg); v.textContent = p[k] + 'h';
+      bind(r, (ev) => show(ev, label(p), `${name}出發 約 ${fmtH(p[k])}`), box);
+    });
+  });
+}
+const draw = () => { drawDots(); drawDrive(); };
+draw();
+let lastW = window.innerWidth, timer;
+window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(timer); timer = setTimeout(draw, 150); });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', draw);
+</script>
+</body>
+</html>
