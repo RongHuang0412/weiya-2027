@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 尾牙餐廳比較</title>
+<style>
+:root{--fg:#111;--muted:#666;--bg:#f6f6f4;--panel:#fff;--line:#e2e2de;--grid:#ececea}
+@media (prefers-color-scheme: dark){:root{--fg:#f2f2f0;--muted:#a3a3a0;--bg:#141414;--panel:#1d1d1c;--line:#353533;--grid:#2a2a29}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:Arial,"Microsoft JhengHei","微軟正黑體","PingFang TC","Noto Sans TC",sans-serif;font-size:15px;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:72rem;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:20px}
+h1{font-size:26px;margin:0 0 8px;letter-spacing:.02em}
+.take{margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:13px;color:var(--muted);background:var(--panel)}
+.chip b{color:var(--fg)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;min-width:0}
+.card h2{font-size:18px;margin:0}
+.note{margin:4px 0 14px;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,24rem),1fr));gap:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--muted);border-bottom:1px solid var(--fg);padding:6px 8px;white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.rank td:first-child{width:2.2em;text-align:center;color:var(--muted)}
+tr.top td,tr.top td:first-child{font-weight:700;color:var(--fg)}
+.detail td:first-child{font-weight:700;white-space:nowrap}
+.map-a{display:block;margin-top:4px;font-size:13px;font-weight:400;color:var(--fg);text-decoration:underline;text-underline-offset:2px}
+.detail a{color:inherit}
+.scroll{overflow-x:auto}
+.detail{min-width:56rem}
+.box{position:relative}
+svg{display:block}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.15);padding:4px 10px;font-size:13px;white-space:nowrap;opacity:0}
+.tip .h{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted);margin-bottom:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.k{display:inline-flex;align-items:center;justify-content:center;font-style:normal}
+.k-r{width:16px;height:16px;border-radius:50%;background:var(--fg);color:var(--panel);font-size:10px;font-weight:700}
+.k-o{width:11px;height:11px;background:var(--fg);border-radius:2px}
+.k-h{padding:1px 6px;border-radius:999px;background:var(--fg);color:var(--panel);font-size:10px;font-weight:700;line-height:1.4}
+.k-m{width:16px;height:9px;border-top:3px solid var(--muted);position:relative;top:3px}
+.k-t{width:16px;height:9px;border-top:2px dashed var(--fg);position:relative;top:3px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:3.6em 1fr;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl .t{font-weight:700;font-variant-numeric:tabular-nums}
+.tl .i{font-weight:700}
+.tl .tag{display:inline-block;margin-left:8px;border:1px solid var(--line);border-radius:999px;padding:0 8px;font-size:12px;font-weight:400;color:var(--muted)}
+.tl li.key .tag{border-color:var(--fg);color:var(--fg)}
+.tl .d{color:var(--muted);font-size:13px;margin-top:2px}
+details{font-size:13px;color:var(--muted)}
+details a{color:var(--fg)}
+details ul{padding-left:1.2em;line-height:1.8}
+@media (max-width:640px){
+ .card{padding:14px}
+ h1{font-size:22px}
+ .detail{min-width:0}
+ .detail thead{display:none}
+ .detail,.detail tbody,.detail tr,.detail td{display:block}
+ .detail tr{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}
+ .detail tr.top{border-color:var(--fg)}
+ .detail td,.detail tr.top td{border:0;padding:3px 0;display:grid;grid-template-columns:4.5em 1fr;gap:8px;font-weight:400}
+ .detail td:first-child,.detail tr.top td:first-child{display:block;font-weight:700;padding-bottom:6px;white-space:normal;font-size:16px}
+ .detail td::before{color:var(--muted);font-size:12px;padding-top:2px}
+ .detail td:nth-child(2)::before{content:"料理"}.detail td:nth-child(3)::before{content:"交通"}
+ .detail td:nth-child(4)::before{content:"包廂"}.detail td:nth-child(5)::before{content:"價格"}
+ .detail td:nth-child(6)::before{content:"優勢"}.detail td:nth-child(7)::before{content:"注意"}
+ .detail td:nth-child(8)::before{content:"電話"}
+ .rank td:nth-child(2){min-width:5em}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header>
+  <h1>2027 尾牙餐廳比較</h1>
+  <p class="take">首選 <b>禪燒肉</b>：新鮮感最高、包廂剛好。交通最穩是 <b>逸薈軒</b>；想邊吃邊玩選 <b>川泰錦</b>。1/29 是年前最後一個週五，建議本週內打電話保留包廂。</p>
+  <div class="meta">
+   <span class="chip">日期 <b>1/29</b>（週五）晚上</span>
+   <span class="chip">人數 <b>15–17</b> 人</span>
+   <span class="chip">預算 每人 <b>2,000–3,000</b> 元</span>
+   <span class="chip">條件 有包廂・不安排表演</span>
+  </div>
+ </header>
+ <div class="grid">
+  <section class="card"><h2>推薦順序</h2><p class="note">粗體為主推。</p>
+   <table class="rank"><thead><tr><th>#</th><th>餐廳</th><th>推薦理由</th></tr></thead><tbody id="rank"></tbody></table>
+  </section>
+  <section class="card"><h2>各家優勢一眼看</h2><p class="note">圓點越多越好。</p><div class="box" id="dots"></div></section>
+ </div>
+ <section class="card"><h2>詳細比較</h2><p class="note">價格為網路公開資訊，實際報價與包廂空檔以電話確認為準。</p>
+  <div class="scroll"><table class="detail"><thead><tr><th>餐廳</th><th>料理</th><th>交通</th><th>包廂</th><th>價格參考</th><th>優勢</th><th>注意</th><th>電話</th></tr></thead><tbody id="detail"></tbody></table></div>
+ </section>
+ <section class="card"><h2>位置圖</h2><p class="note">示意圖，位置為概略；精確位置請點上方各店的 Google 地圖。點圖上的點可看名稱。</p>
+  <div class="legend"><span><i class="k k-r">1</i>餐廳（數字＝推薦順序）</span><span><i class="k k-o"></i>公司</span><span><i class="k k-h">高鐵</i>高鐵桃園站（機捷 A18 同站）</span><span><i class="k k-m"></i>機場捷運</span><span><i class="k k-t"></i>台鐵</span></div>
+  <div class="box" id="map"></div>
+ </section>
+ <section class="card"><h2>當天流程建議</h2><p class="note">以首選禪燒肉估算；若選逸薈軒，集合後步行即到，其餘時間不變。</p><ol class="tl" id="plan"></ol></section>
+ <details><summary>評分說明與資料來源</summary><ul>
+  <li>圓點評分是依公開資訊整理的相對比較，不是店家或官方數據。資料整理日期：2026/11/6。</li>
+  <li><a href="https://supertaste.tvbs.com.tw/hot/355972" target="_blank" rel="noopener">食尚玩家：禪燒肉包廂與代烤</a></li>
+  <li><a href="https://opentable.ae/restaurant/profile/184631" target="_blank" rel="noopener">OpenTable：逸薈軒包廂低消</a></li>
+  <li><a href="https://dramastory2019.com/chuantaijin/" target="_blank" rel="noopener">Drama抓媽：川泰錦包廂設備與低消</a></li>
+  <li><a href="https://opentable.ca/restaurant/profile/209369" target="_blank" rel="noopener">OpenTable：味坊包廂與主廚</a></li>
+  <li><a href="https://jamesdiscover.tw/blog/10910" target="_blank" rel="noopener">若曦的味旅人生：古華明皇樓</a></li>
+  <li><a href="https://supertaste.tvbs.com.tw/food/358612" target="_blank" rel="noopener">食尚玩家：晶粵軒桃園店</a></li>
+  <li><a href="https://supertaste.tvbs.com.tw/food/358300" target="_blank" rel="noopener">食尚玩家：青埔美食（Lavish 132）</a></li>
+  <li><a href="https://www.ctee.com.tw/news/20260421700402-430503" target="_blank" rel="noopener">工商時報：尾牙檔期提前卡位</a></li>
+ </ul></details>
+</div>
+<script>
+const DATA = {"R": [{"rank": 1, "name": "禪燒肉", "reason": "古蹟建築＋全程代烤，包廂 10–20 人剛好，新鮮感最高；唯一缺點是要轉車", "kind": "頂級燒肉・全程代烤", "transit": "中壢廣安街，從車站需轉車", "room": "包廂 10–20 人（附 KTV，可不開）", "price": "未公開，請店家依每人 2,500–3,000 元配套餐", "pros": "日治製冰廠改建、榫卯狀元書房；厚切牛舌、和牛、北海道干貝", "cons": "週二公休；需轉車", "phone": "03-425-0965", "s_fresh": 5, "s_transit": 2, "s_room": 5, "s_price": 3, "map_q": "禪燒肉 桃園市中壢區廣安街32號"}, {"rank": 2, "name": "逸薈軒（和逸飯店）", "reason": "高鐵站走路 5–10 分，五星飯店包廂最穩；菜色偏傳統桌菜", "kind": "川揚菜・烤鴨三吃", "transit": "高鐵桃園站步行 5–10 分", "room": "2F 獨立包廂", "price": "包廂每桌低消 18,800 元＋服務費，可升級菜單", "pros": "交通最好、五星服務、穆斯林友善認證", "cons": "包廂不適用任何折扣", "phone": "03-273-7696", "s_fresh": 2, "s_transit": 5, "s_room": 5, "s_price": 5, "map_q": "和逸飯店桃園館 逸薈軒 桃園市中壢區春德路101號"}, {"rank": 3, "name": "川泰錦", "reason": "包廂有室內高爾夫、Switch，飯後可 PK，不用表演也熱鬧", "kind": "川菜・泰式・星馬菜", "transit": "青埔青松街，距高鐵站需確認", "room": "遊戲包廂（室內高爾夫、Switch、KTV）", "price": "包廂低消 6,000 元／4 小時＋10%，單點制", "pros": "邊吃邊玩；單點價位不高，預算可點海鮮大菜", "cons": "包廂人數待確認；部分菜偏辣", "phone": "03-287-7877", "s_fresh": 5, "s_transit": 3, "s_room": 3, "s_price": 4, "map_q": "川泰錦東方異國料理 桃園市中壢區青松街205號"}, {"rank": 4, "name": "味坊（諾富特）", "reason": "米其林餐盤推薦粵菜、6 間包廂；比和逸多一段機捷", "kind": "粵菜・避風塘・煲湯", "transit": "高鐵站轉機捷至 A14a，出站 1 分", "room": "6 間獨立包廂", "price": "每人約 1,000–1,999 元，桌菜需詢價", "pros": "服務細緻、開瓶費低", "cons": "位在機場旁", "phone": "待查", "s_fresh": 2, "s_transit": 4, "s_room": 4, "s_price": 3, "map_q": "諾富特華航桃園機場飯店 味坊 桃園市大園區航站南路1-1號"}, {"rank": 5, "name": "古華明皇樓", "reason": "五星飯店粵菜、有包廂，適合宴客；價格未公開", "kind": "粵菜・港點・片皮鴨", "transit": "中壢民權路，需轉車", "room": "有包廂，大小需確認", "price": "未公開，需來電", "pros": "環境穩重、老字號五星飯店", "cons": "價格與包廂大小都要問", "phone": "03-281-1818", "s_fresh": 2, "s_transit": 2, "s_room": 3, "s_price": 2, "map_q": "古華花園飯店 明皇樓 桃園市中壢區民權路398號"}, {"rank": 6, "name": "晶粵軒", "reason": "金牌片皮鴨、新裝潢；能否坐 15–17 人包廂需確認", "kind": "粵菜・金牌片皮鴨", "transit": "桃園藝文特區，需轉計程車", "room": "包廂需確認", "price": "片皮鴨全隻 1,980 元，桌菜需詢價", "pros": "空間獲國際設計獎；停車折抵 3 小時", "cons": "週末婚宴多", "phone": "03-355-3555", "s_fresh": 3, "s_transit": 2, "s_room": 2, "s_price": 4, "map_q": "晶粵軒烤鴨餐廳 桃園市桃園區南平路166號"}, {"rank": 7, "name": "Lavish 132", "reason": "離高鐵站最近的泰式私廚；每時段限 2 組，需問能否包場", "kind": "泰式私廚（預約制）", "transit": "高鐵桃園站步行約 10 分", "room": "需問能否包場", "price": "需詢價", "pros": "Google 5.0 星；植栽空間有質感", "cons": "偏無菜單形式，和之前吃過的類似", "phone": "待查", "s_fresh": 3, "s_transit": 5, "s_room": 2, "s_price": 2, "map_q": "Lavish 132 泰式私廚 桃園"}], "P": [{"type": "restaurant", "name": "禪燒肉", "lat": 24.9578, "lng": 121.23, "line": "", "order": 0, "label": true, "ref": "禪燒肉"}, {"type": "restaurant", "name": "逸薈軒（和逸飯店）", "lat": 25.0108, "lng": 121.2131, "line": "", "order": 0, "label": true, "ref": "逸薈軒（和逸飯店）"}, {"type": "restaurant", "name": "川泰錦", "lat": 25.0068, "lng": 121.2203, "line": "", "order": 0, "label": true, "ref": "川泰錦"}, {"type": "restaurant", "name": "味坊（諾富特）", "lat": 25.0688, "lng": 121.2214, "line": "", "order": 0, "label": true, "ref": "味坊（諾富特）"}, {"type": "restaurant", "name": "古華明皇樓", "lat": 24.9603, "lng": 121.215, "line": "", "order": 0, "label": true, "ref": "古華明皇樓"}, {"type": "restaurant", "name": "晶粵軒", "lat": 25.0163, "lng": 121.3011, "line": "", "order": 0, "label": true, "ref": "晶粵軒"}, {"type": "restaurant", "name": "Lavish 132", "lat": 25.0172, "lng": 121.2196, "line": "", "order": 0, "label": true, "ref": "Lavish 132"}, {"type": "office", "name": "元新桃園據點（蘆竹）", "lat": 25.042, "lng": 121.281, "line": "", "order": 0, "label": true, "ref": ""}, {"type": "hsr", "name": "高鐵桃園站", "lat": 25.0129, "lng": 121.215, "line": "", "order": 0, "label": true, "ref": ""}, {"type": "mrt", "name": "A13 機場第二航廈", "lat": 25.0773, "lng": 121.2309, "line": "機場捷運", "order": 13, "label": false, "ref": ""}, {"type": "mrt", "name": "A14a 機場旅館", "lat": 25.067, "lng": 121.221, "line": "機場捷運", "order": 14, "label": true, "ref": ""}, {"type": "mrt", "name": "A15 大園", "lat": 25.0581, "lng": 121.2009, "line": "機場捷運", "order": 15, "label": false, "ref": ""}, {"type": "mrt", "name": "A16 橫山", "lat": 25.0372, "lng": 121.2082, "line": "機場捷運", "order": 16, "label": false, "ref": ""}, {"type": "mrt", "name": "A17 領航", "lat": 25.0255, "lng": 121.2153, "line": "機場捷運", "order": 17, "label": false, "ref": ""}, {"type": "mrt", "name": "A18 高鐵桃園站", "lat": 25.0129, "lng": 121.215, "line": "機場捷運", "order": 18, "label": false, "ref": ""}, {"type": "mrt", "name": "A19 桃園體育園區", "lat": 25.0013, "lng": 121.2039, "line": "機場捷運", "order": 19, "label": false, "ref": ""}, {"type": "mrt", "name": "A20 興南", "lat": 24.9837, "lng": 121.2096, "line": "機場捷運", "order": 20, "label": false, "ref": ""}, {"type": "mrt", "name": "A21 環北", "lat": 24.968, "lng": 121.222, "line": "機場捷運", "order": 21, "label": true, "ref": ""}, {"type": "mrt", "name": "A22 老街溪", "lat": 24.9613, "lng": 121.2286, "line": "機場捷運", "order": 22, "label": false, "ref": ""}, {"type": "tra", "name": "中壢火車站", "lat": 24.9537, "lng": 121.2257, "line": "台鐵", "order": 1, "label": true, "ref": ""}, {"type": "tra", "name": "內壢火車站", "lat": 24.9726, "lng": 121.2585, "line": "台鐵", "order": 2, "label": false, "ref": ""}, {"type": "tra", "name": "桃園火車站", "lat": 24.9893, "lng": 121.3133, "line": "台鐵", "order": 3, "label": true, "ref": ""}], "S": [{"time": "15:00", "item": "台南同事出發", "detail": "善化辦公室 → 高鐵台南站，搭約 16:00 北上班次（約 1.5 小時）", "tag": "出發"}, {"time": "16:00", "item": "台中同事出發", "detail": "西屯辦公室 → 高鐵台中站，搭約 16:40 北上班次（約 45 分）", "tag": "出發"}, {"time": "17:15", "item": "桃園同事出發", "detail": "蘆竹據點開車前往餐廳，或到高鐵站會合", "tag": "出發"}, {"time": "17:30", "item": "高鐵桃園站集合", "detail": "大廳集合後一起移動：逸薈軒步行約 10 分；禪燒肉計程車約 20–25 分", "tag": "集合"}, {"time": "18:00", "item": "入座・老闆開場", "detail": "老闆致詞、舉杯，約 10 分鐘", "tag": "餐敘"}, {"time": "18:15", "item": "開動", "detail": "前段專心吃飯聊天", "tag": "餐敘"}, {"time": "19:00", "item": "第一輪抽獎", "detail": "現金紅包或禮券，先抽小獎暖場", "tag": "活動"}, {"time": "19:30", "item": "年度小獎", "detail": "同事互票：最佳夥伴、現場最拚王等，頒個小紅包", "tag": "活動"}, {"time": "20:00", "item": "第二輪抽獎", "detail": "大獎＋老闆加碼", "tag": "活動"}, {"time": "20:30", "item": "大合照", "detail": "請服務人員幫忙拍，全員＋家屬", "tag": "結束"}, {"time": "20:45", "item": "散會", "detail": "中南部同事回高鐵站，約 21:15 後班次南下", "tag": "結束"}]};
+const NS = 'http://www.w3.org/2000/svg';
+const S = (tag, a, parent) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (parent) parent.append(e); return e; };
+const H = (tag, cls, text, parent) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; if (parent) parent.append(e); return e; };
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const R = DATA.R.slice().sort((a, b) => a.rank - b.rank);
+const rankOf = new Map(R.map((x) => [x.name, x.rank]));
+
+const tipFor = (box) => { const t = H('div', 'tip', null, box); return (ev, title, line) => { const b = box.getBoundingClientRect(); t.replaceChildren(); H('div', 'h', title, t); H('div', null, line, t); const mx = ev.clientX - b.left, my = ev.clientY - b.top; t.style.opacity = 1; t.style.left = Math.max(0, Math.min(mx + 12, box.clientWidth - t.offsetWidth - 4)) + 'px'; t.style.top = Math.max(0, my - 44) + 'px'; }; };
+const hideTip = (box) => { const t = box.querySelector('.tip'); if (t) t.style.opacity = 0; };
+const bind = (el, fn, box) => { el.addEventListener('pointerdown', fn); el.addEventListener('pointermove', fn); el.addEventListener('pointerleave', () => hideTip(box)); };
+
+// tables
+const rk = document.getElementById('rank');
+R.forEach((x) => { const tr = H('tr', x.rank <= 3 ? 'top' : '', null, rk); [x.rank, x.name, x.reason].forEach((v) => H('td', null, String(v), tr)); });
+const dt = document.getElementById('detail');
+R.forEach((x) => {
+  const tr = H('tr', x.rank <= 3 ? 'top' : '', null, dt);
+  const td = H('td', null, null, tr); H('span', null, x.name, td);
+  const a = H('a', 'map-a', 'Google 地圖 ↗', td); a.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(x.map_q || x.name); a.target = '_blank'; a.rel = 'noopener';
+  ['kind', 'transit', 'room', 'price', 'pros', 'cons'].forEach((f) => H('td', null, x[f], tr));
+  const p = H('td', null, null, tr);
+  if (/^\d/.test(x.phone)) { const l = H('a', null, x.phone, p); l.href = 'tel:' + x.phone.replace(/-/g, ''); } else p.textContent = x.phone;
+});
+
+// schedule
+const pl = document.getElementById('plan');
+DATA.S.forEach((x) => { const li = H('li', x.tag === '集合' || x.tag === '結束' ? 'key' : '', null, pl); H('div', 't', x.time, li); const b = H('div', null, null, li); const i = H('div', 'i', x.item, b); H('span', 'tag', x.tag, i); H('div', 'd', x.detail, b); });
+
+const DIMS = [['s_fresh', '新鮮感', '新鮮'], ['s_transit', '交通', '交通'], ['s_room', '包廂把握', '包廂'], ['s_price', '價格明確', '價格']];
+function drawDots() {
+  const box = document.getElementById('dots'); box.replaceChildren();
+  const W = Math.max(280, box.clientWidth || 480), rowH = 34, top = 30, Ht = top + rowH * R.length;
+  const narrow = W < 460, label = (x) => (narrow ? x.name.split('（')[0] : x.name);
+  const svg = S('svg', {width: '100%', viewBox: `0 0 ${W} ${Ht}`, role: 'img', 'aria-label': '各家優勢評分'}, box);
+  const fg = css('--fg'), mu = css('--muted'), ln = css('--line'), gr = css('--grid');
+  const probe = S('text', {'font-size': 13, 'font-weight': 700}, svg);
+  let lw = 0; R.forEach((x) => { probe.textContent = label(x); lw = Math.max(lw, probe.getComputedTextLength()); }); probe.remove();
+  lw = Math.ceil(lw) + (narrow ? 8 : 14);
+  const colW = (W - lw) / DIMS.length, dotR = Math.max(2.5, Math.min(5.5, colW / 15)), gap = dotR * 2.6;
+  const show = tipFor(box);
+  DIMS.forEach(([, l, s], i) => { const t = S('text', {x: lw + colW * i + colW / 2, y: 14, 'text-anchor': 'middle', 'font-size': 13, fill: mu}, svg); t.textContent = colW < 64 ? s : l; });
+  R.forEach((x, j) => {
+    const y = top + rowH * j + rowH / 2;
+    S('line', {x1: 0, x2: W, y1: top + rowH * j, y2: top + rowH * j, stroke: gr}, svg);
+    const t = S('text', {x: 0, y, dy: '0.35em', 'font-size': 13, fill: x.rank <= 3 ? fg : mu, 'font-weight': x.rank <= 3 ? 700 : 400}, svg); t.textContent = label(x);
+    DIMS.forEach(([k, l], i) => {
+      const cx0 = lw + colW * i + colW / 2 - gap * 2;
+      for (let n = 0; n < 5; n++) S('circle', n < x[k] ? {cx: cx0 + gap * n, cy: y, r: dotR, fill: fg} : {cx: cx0 + gap * n, cy: y, r: dotR, fill: 'none', stroke: ln, 'stroke-width': 1.2}, svg);
+      const hit = S('rect', {x: lw + colW * i, y: y - rowH / 2, width: colW, height: rowH, fill: 'transparent'}, svg);
+      bind(hit, (ev) => show(ev, x.name, `${l} ${x[k]} / 5`), box);
+    });
+  });
+}
+
+const TYPE = {restaurant: '餐廳', office: '公司', hsr: '高鐵', mrt: '機場捷運', tra: '台鐵'};
+function drawMap() {
+  const box = document.getElementById('map'); box.replaceChildren();
+  const fg = css('--fg'), mu = css('--muted'), pn = css('--panel');
+  const pts = DATA.P.map((d) => ({...d}));
+  const W = Math.max(300, box.clientWidth || 600), Hh = Math.round(Math.min(580, Math.max(380, W * 0.8))), narrow = W < 460;
+  const merc = (lat) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)), rad = Math.PI / 180;
+  const xs = pts.map((d) => d.lng * rad), ys = pts.map((d) => merc(d.lat));
+  const xMin = Math.min(...xs), xMax = Math.max(...xs), yMin = Math.min(...ys), yMax = Math.max(...ys), M = 30;
+  const k = Math.min((W - 2 * M) / (xMax - xMin), (Hh - 2 * M) / (yMax - yMin));
+  const ox = (W - (xMax - xMin) * k) / 2, oy = (Hh - (yMax - yMin) * k) / 2;
+  pts.forEach((d, i) => { d.x = ox + (xs[i] - xMin) * k; d.y = oy + (yMax - ys[i]) * k; });
+  const RAD = {hsr: 19, restaurant: 10, office: 7};
+  const big = pts.filter((d) => RAD[d.type]);
+  big.forEach((d) => { d.tx = d.x; d.ty = d.y; d.rr = RAD[d.type]; });
+  for (let it = 0; it < 80; it++) {
+    let moved = false;
+    for (let i = 0; i < big.length; i++) for (let j = i + 1; j < big.length; j++) {
+      const a = big[i], b = big[j]; let vx = b.x - a.x, vy = b.y - a.y; const dist = Math.hypot(vx, vy), need = a.rr + b.rr + 3;
+      if (dist >= need) continue;
+      if (dist < 0.01) { vx = 1; vy = 0; } else { vx /= dist; vy /= dist; }
+      const push = need - dist, am = a.type !== 'hsr', bm = b.type !== 'hsr';
+      if (am && bm) { a.x -= vx * push / 2; a.y -= vy * push / 2; b.x += vx * push / 2; b.y += vy * push / 2; }
+      else if (am) { a.x -= vx * push; a.y -= vy * push; } else if (bm) { b.x += vx * push; b.y += vy * push; }
+      moved = true;
+    }
+    big.forEach((d) => { d.x = Math.max(d.rr + 2, Math.min(W - d.rr - 2, d.x)); d.y = Math.max(d.rr + 2, Math.min(Hh - d.rr - 2, d.y)); });
+    if (!moved) break;
+  }
+  const svg = S('svg', {width: '100%', viewBox: `0 0 ${W} ${Hh}`, role: 'img', 'aria-label': '餐廳與車站位置示意圖'}, box);
+  const lines = new Map(); pts.filter((d) => d.line).forEach((d) => { if (!lines.has(d.line)) lines.set(d.line, []); lines.get(d.line).push(d); });
+  lines.forEach((arr, l) => { const s = arr.slice().sort((a, b) => a.order - b.order); S('path', l === '台鐵' ? {d: 'M' + s.map((d) => `${d.x.toFixed(1)},${d.y.toFixed(1)}`).join('L'), fill: 'none', stroke: fg, 'stroke-width': 1.5, 'stroke-dasharray': '5 4'} : {d: 'M' + s.map((d) => `${d.x.toFixed(1)},${d.y.toFixed(1)}`).join('L'), fill: 'none', stroke: mu, 'stroke-width': 3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: .55}, svg); });
+  big.forEach((d) => { if (Math.hypot(d.x - d.tx, d.y - d.ty) < 3) return; S('line', {x1: d.tx, y1: d.ty, x2: d.x, y2: d.y, stroke: mu, 'stroke-width': 1}, svg); S('circle', {cx: d.tx, cy: d.ty, r: 2, fill: mu}, svg); });
+  const show = tipFor(box);
+  const layer = ['mrt', 'tra', 'hsr', 'office', 'restaurant'], occ = [];
+  pts.slice().sort((a, b) => layer.indexOf(a.type) - layer.indexOf(b.type)).forEach((d) => {
+    const g = S('g', {transform: `translate(${d.x},${d.y})`, style: 'cursor:pointer'}, svg); let r = 4;
+    if (d.type === 'mrt') { S('circle', {r: 3.5, fill: pn, stroke: mu, 'stroke-width': 1.5}, g); }
+    else if (d.type === 'tra') { S('rect', {x: -4.5, y: -4.5, width: 9, height: 9, transform: 'rotate(45)', fill: pn, stroke: fg, 'stroke-width': 1.5}, g); r = 6; }
+    else if (d.type === 'hsr') { S('circle', {r: 19, fill: 'none', stroke: fg, 'stroke-width': 1.5, 'stroke-dasharray': '3 3'}, g); S('rect', {x: -17, y: -10, width: 34, height: 20, rx: 10, fill: fg}, g); const t = S('text', {'text-anchor': 'middle', dy: '0.36em', 'font-size': 11, 'font-weight': 700, fill: pn}, g); t.textContent = '高鐵'; r = 19; }
+    else if (d.type === 'office') { S('rect', {x: -6, y: -6, width: 12, height: 12, rx: 2, fill: fg}, g); r = 7; }
+    else { const n = rankOf.get(d.ref), tp = n && n <= 3; r = 10; S('circle', {r, fill: tp ? fg : pn, stroke: fg, 'stroke-width': 1.5}, g); const t = S('text', {'text-anchor': 'middle', dy: '0.36em', 'font-size': 11, 'font-weight': 700, fill: tp ? pn : fg}, g); t.textContent = n || ''; }
+    const hit = S('circle', {r: Math.max(r, 14), fill: 'transparent'}, g);
+    const n = d.ref ? rankOf.get(d.ref) : null;
+    bind(hit, (ev) => show(ev, TYPE[d.type] || '', n ? `${n}. ${d.name}` : d.name), box);
+    d.r = r; occ.push({x0: d.x - r, y0: d.y - r, x1: d.x + r, y1: d.y + r});
+  });
+  const clash = (b) => b.x0 < 0 || b.x1 > W || b.y0 < 0 || b.y1 > Hh || occ.some((o) => b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0);
+  const prio = ['hsr', 'restaurant', 'office', 'tra', 'mrt'];
+  pts.filter((d) => d.label).sort((a, b) => prio.indexOf(a.type) - prio.indexOf(b.type)).forEach((d) => {
+    const txt = d.type === 'restaurant' && narrow ? d.name.split('（')[0] : d.name;
+    const st = d.type === 'mrt' || d.type === 'tra';
+    const t = S('text', {'font-size': d.type === 'hsr' ? 15 : 13, 'font-weight': d.type === 'hsr' ? 700 : 400, fill: st ? mu : fg, stroke: pn, 'stroke-width': 3, 'paint-order': 'stroke', 'stroke-linejoin': 'round', 'pointer-events': 'none'}, svg);
+    t.textContent = txt;
+    const bb = t.getBBox(), w = bb.width, h = bb.height, pad = d.r + 4;
+    const cands = [[d.x + pad, d.y + h * 0.35, 'start'], [d.x - pad, d.y + h * 0.35, 'end'], [d.x, d.y - pad - 2, 'middle'], [d.x, d.y + pad + h * 0.75, 'middle']];
+    for (const [x, y, anc] of cands) {
+      const x0 = anc === 'start' ? x : anc === 'end' ? x - w : x - w / 2;
+      const b = {x0: x0 - 1, y0: y - h * 0.8, x1: x0 + w + 1, y1: y + h * 0.2};
+      if (!clash(b)) { t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('text-anchor', anc); occ.push(b); return; }
+    }
+    t.remove();
+  });
+}
+const draw = () => { drawDots(); drawMap(); };
+draw();
+let lastW = window.innerWidth, timer;
+window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; lastW = window.innerWidth; clearTimeout(timer); timer = setTimeout(draw, 150); });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', draw);
+</script>
+</body>
+</html>
